@@ -30,9 +30,10 @@ import { v4 as uuidv4 } from 'uuid';
 interface PromptsPanelProps {
   selectedPrompt: any;
   onSelectPrompt: (prompt: any) => void;
+  onLoadSamplePanels?: (panels: any[]) => void;
 }
 
-export function PromptsPanel({ selectedPrompt, onSelectPrompt }: PromptsPanelProps) {
+export function PromptsPanel({ selectedPrompt, onSelectPrompt, onLoadSamplePanels }: PromptsPanelProps) {
   const [prompts, setPrompts] = useState<any[]>([]);
   const [editingPrompt, setEditingPrompt] = useState<any>(null);
   const [showEditDialog, setShowEditDialog] = useState(false);
@@ -53,7 +54,7 @@ export function PromptsPanel({ selectedPrompt, onSelectPrompt }: PromptsPanelPro
   const handleLoadSamples = async () => {
     try {
       // Load sample storyboards from the public/samples directory
-      const response = await fetch('/samples/character-journey.json');
+      const response = await fetch('/samples/sample-storyboard.json');
       const sampleData = await response.json();
 
       // Convert sample panels to prompt format
@@ -70,6 +71,39 @@ export function PromptsPanel({ selectedPrompt, onSelectPrompt }: PromptsPanelPro
       await window.electronAPI?.savePrompt(newPrompt);
       loadPrompts();
       onSelectPrompt(newPrompt);
+
+      // Load sample images and pass them to parent
+      if (onLoadSamplePanels && sampleData.panels) {
+        const panelsWithImages = await Promise.all(
+          sampleData.panels.map(async (panel: any) => {
+            try {
+              // Load image from samples/images folder
+              const imageUrl = `/samples/images/${panel.image}`;
+              const imageResponse = await fetch(imageUrl);
+              const imageBlob = await imageResponse.blob();
+              const imageDataUrl = await createImageBitmap(imageBlob);
+
+              return {
+                id: panel.id,
+                url: imageUrl,
+                description: panel.description,
+                status: 'completed'
+              };
+            } catch (imgError) {
+              console.error(`Failed to load image for panel ${panel.id}:`, imgError);
+              return {
+                id: panel.id,
+                url: null,
+                description: panel.description,
+                status: 'error'
+              };
+            }
+          })
+        );
+
+        onLoadSamplePanels(panelsWithImages);
+      }
+
       setShowSamplesDialog(false);
     } catch (error) {
       console.error('Failed to load sample:', error);
@@ -109,6 +143,26 @@ export function PromptsPanel({ selectedPrompt, onSelectPrompt }: PromptsPanelPro
     // Select the newly created/edited prompt
     const updatedPrompt = await window.electronAPI.getPrompt(promptData.id);
     onSelectPrompt(updatedPrompt);
+  };
+
+  const handlePromptSelect = async (prompt: any) => {
+    onSelectPrompt(prompt);
+
+    // Load any existing generations for this prompt
+    if (window.electronAPI && prompt.id && onLoadSamplePanels) {
+      try {
+        const generations = await window.electronAPI.getGenerations(prompt.id);
+        if (generations.length > 0) {
+          // Use the most recent generation
+          const latestGeneration = generations[0];
+          if (latestGeneration.output_images && latestGeneration.output_images.length > 0) {
+            onLoadSamplePanels(latestGeneration.output_images);
+          }
+        }
+      } catch (error) {
+        console.error('Failed to load generations for prompt:', error);
+      }
+    }
   };
 
   const handleDeletePrompt = async (promptId: string) => {
@@ -168,7 +222,7 @@ export function PromptsPanel({ selectedPrompt, onSelectPrompt }: PromptsPanelPro
           >
             <ListItemButton
               selected={selectedPrompt?.id === prompt.id}
-              onClick={() => onSelectPrompt(prompt)}
+              onClick={() => handlePromptSelect(prompt)}
             >
               <ListItemText
                 primary={prompt.title}

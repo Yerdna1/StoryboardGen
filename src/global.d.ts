@@ -128,6 +128,7 @@ export interface ElectronAPI {
 
   // Generation History
   getAllGenerations: () => Promise<any[]>;
+  getGenerations: (promptId: string) => Promise<any[]>;
   getGeneration: (id: string) => Promise<any>;
   deleteGeneration: (id: string) => Promise<void>;
   markAsSample: (generationId: string, sampleName: string) => Promise<{ success: boolean }>;

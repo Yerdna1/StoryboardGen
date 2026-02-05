@@ -410,6 +410,7 @@ export function MainCanvas({ onOpenSettings }: MainCanvasProps) {
         <PromptsPanel
           selectedPrompt={selectedPrompt}
           onSelectPrompt={setSelectedPrompt}
+          onLoadSamplePanels={setGeneratedPanels}
         />
       </Drawer>
 

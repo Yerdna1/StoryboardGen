@@ -42,6 +42,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
 
   // Generation History
   getAllGenerations: () => ipcRenderer.invoke('get-all-generations'),
+  getGenerations: (promptId) => ipcRenderer.invoke('get-generations', promptId),
   getGeneration: (id) => ipcRenderer.invoke('get-generation', id),
   deleteGeneration: (id) => ipcRenderer.invoke('delete-generation', id),
   markAsSample: (generationId, sampleName) => ipcRenderer.invoke('mark-as-sample', generationId, sampleName),

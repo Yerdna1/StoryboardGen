@@ -1,0 +1,8 @@
+[     763ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3000/logo192.png (Download error or resource isn't a valid image) @ http://localhost:3000/:0
+[   92215ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3000/logo192.png (Download error or resource isn't a valid image) @ http://localhost:3000/:0
+[  108009ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3000/logo192.png (Download error or resource isn't a valid image) @ http://localhost:3000/:0
+[  212622ms] [ERROR] WebSocket connection to 'ws://localhost:3000/ws' failed:  @ http://localhost:3000/static/js/bundle.js:77904
+[  213646ms] [ERROR] WebSocket connection to 'ws://localhost:3000/ws' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/static/js/bundle.js:77904
+[  215747ms] [ERROR] WebSocket connection to 'ws://localhost:3000/ws' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/static/js/bundle.js:77904
+[  219833ms] [ERROR] WebSocket connection to 'ws://localhost:3000/ws' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/static/js/bundle.js:77904
+[  257624ms] [WARNING] Error while trying to use the following icon from the Manifest: http://localhost:3000/logo192.png (Download error or resource isn't a valid image) @ http://localhost:3000/:0
