@@ -12,7 +12,6 @@ import {
   Button,
   Stack,
   Tooltip,
-  Chip,
   Snackbar,
   Alert,
   LinearProgress,
@@ -23,10 +22,8 @@ import {
   TextField
 } from '@mui/material';
 import {
-  ZoomIn as ZoomInIcon,
   Download as DownloadIcon,
   MovieCreation as ExportIcon,
-  Fullscreen as FullscreenIcon,
   ViewModule as GridIcon,
   VideoSettings as SettingsIcon
 } from '@mui/icons-material';

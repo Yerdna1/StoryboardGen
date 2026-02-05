@@ -49,6 +49,7 @@ export function GenerationDialog({ open, onClose, onGenerate }: GenerationDialog
 
   useEffect(() => {
     checkAvailableProviders();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
   const checkAvailableProviders = async () => {

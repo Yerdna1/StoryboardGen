@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoryboardGen - Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .panel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .panel { aspect-ratio: 16/9; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 12px; }
+        .panel:nth-child(odd) { background: linear-gradient(135deg, #0f3460 0%, #16213e 100%); }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg py-4 px-6 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                <span class="text-2xl">🎬</span>
+            </div>
+            <h1 class="text-xl font-bold">StoryboardGen</h1>
+        </div>
+        <div class="flex items-center gap-4">
+            <span class="text-sm opacity-80">✨ AI-Powered Storyboard Creator</span>
+            <button class="bg-white text-purple-600 px-4 py-2 rounded-lg font-semibold text-sm hover:opacity-90 transition">
+                Get Started Free
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-6 py-8">
+        <!-- Hero Section -->
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Transform One Image into Epic 20-Panel Stories
+            </h2>
+            <p class="text-gray-400 text-lg mb-6">
+                Upload a single reference image and watch AI create stunning cinematic storyboards in minutes
+            </p>
+            <div class="flex justify-center gap-4">
+                <button class="gradient-bg px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                    🚀 Start Creating Free
+                </button>
+                <button class="glass px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                    Watch Demo
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Interface Demo -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <div class="grid grid-cols-12 gap-6 h-[600px]">
+                <!-- Left Panel - Upload & Settings -->
+                <div class="col-span-3 space-y-4">
+                    <div class="bg-gray-800 rounded-xl p-4">
+                        <h3 class="font-semibold mb-3 flex items-center gap-2">
+                            <span>📤</span> Upload Reference
+                        </h3>
+                        <div class="border-2 border-dashed border-gray-600 rounded-lg p-6 text-center text-gray-400 text-sm">
+                            <div class="text-3xl mb-2">🖼️</div>
+                            Drop your image here<br>or click to browse
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800 rounded-xl p-4">
+                        <h3 class="font-semibold mb-3 flex items-center gap-2">
+                            <span>⚙️</span> AI Provider
+                        </h3>
+                        <select class="w-full bg-gray-700 rounded-lg px-3 py-2 text-sm">
+                            <option>OpenAI DALL-E 3</option>
+                            <option>Google Gemini</option>
+                            <option>Replicate</option>
+                        </select>
+                    </div>
+
+                    <div class="bg-gray-800 rounded-xl p-4">
+                        <h3 class="font-semibold mb-3 flex items-center gap-2">
+                            <span>📝</span> Story Prompt
+                        </h3>
+                        <div class="bg-gray-700 rounded-lg p-3 text-xs text-gray-300">
+                            Epic 20-panel sci-fi narrative: A spaceship stranded in a desert, showing its journey from landing to decay over 500 years...
+                        </div>
+                    </div>
+
+                    <button class="w-full gradient-bg py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                        ✨ Generate Storyboard
+                    </button>
+                </div>
+
+                <!-- Right Panel - Storyboard Preview -->
+                <div class="col-span-9 bg-gray-800 rounded-xl p-4">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-semibold flex items-center gap-2">
+                            <span>🎨</span> Storyboard Preview - 20 Panels
+                        </h3>
+                        <div class="flex gap-2">
+                            <button class="bg-gray-700 px-3 py-1 rounded text-sm">Grid View</button>
+                            <button class="bg-gray-700 px-3 py-1 rounded text-sm">Sequential</button>
+                        </div>
+                    </div>
+                    <div class="panel-grid">
+                        <div class="panel">Panel 1</div>
+                        <div class="panel">Panel 2</div>
+                        <div class="panel">Panel 3</div>
+                        <div class="panel">Panel 4</div>
+                        <div class="panel">Panel 5</div>
+                        <div class="panel">Panel 6</div>
+                        <div class="panel">Panel 7</div>
+                        <div class="panel">Panel 8</div>
+                        <div class="panel">Panel 9</div>
+                        <div class="panel">Panel 10</div>
+                        <div class="panel">Panel 11</div>
+                        <div class="panel">Panel 12</div>
+                        <div class="panel">Panel 13</div>
+                        <div class="panel">Panel 14</div>
+                        <div class="panel">Panel 15</div>
+                        <div class="panel">Panel 16</div>
+                        <div class="panel">Panel 17</div>
+                        <div class="panel">Panel 18</div>
+                        <div class="panel">Panel 19</div>
+                        <div class="panel">Panel 20</div>
+                    </div>
+                    <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700">
+                        <span class="text-sm text-gray-400">🎬 Ready to export as video or images</span>
+                        <div class="flex gap-2">
+                            <button class="bg-purple-600 px-4 py-2 rounded-lg text-sm font-semibold">Download All</button>
+                            <button class="bg-green-600 px-4 py-2 rounded-lg text-sm font-semibold">Export Video</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid grid-cols-3 gap-6 mb-8">
+            <div class="glass rounded-xl p-6 text-center">
+                <div class="text-4xl mb-3">🆓</div>
+                <h3 class="font-semibold mb-2">100% Free</h3>
+                <p class="text-sm text-gray-400">No subscription fees. Use forever without limits.</p>
+            </div>
+            <div class="glass rounded-xl p-6 text-center">
+                <div class="text-4xl mb-3">🔑</div>
+                <h3 class="font-semibold mb-2">No API Key Needed</h3>
+                <p class="text-sm text-gray-400">Built-in free tier. Start creating immediately.</p>
+            </div>
+            <div class="glass rounded-xl p-6 text-center">
+                <div class="text-4xl mb-3">🔒</div>
+                <h3 class="font-semibold mb-2">Complete Privacy</h3>
+                <p class="text-sm text-gray-400">Works offline. Your images never leave your computer.</p>
+            </div>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="glass rounded-xl p-6">
+            <h3 class="font-semibold mb-4 text-center">Perfect For Creators</h3>
+            <div class="flex justify-center gap-8 text-sm">
+                <div class="text-center">🎬 Filmmakers</div>
+                <div class="text-center">📹 YouTubers</div>
+                <div class="text-center">✍️ Writers</div>
+                <div class="text-center">🎮 Game Designers</div>
+                <div class="text-center">📢 Marketers</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -8,7 +8,6 @@ import {
   TextField,
   IconButton,
   Typography,
-  Divider,
   Button,
   Dialog,
   DialogTitle,
@@ -21,8 +20,6 @@ import {
   Add as AddIcon,
   Edit as EditIcon,
   Delete as DeleteIcon,
-  Save as SaveIcon,
-  Close as CloseIcon,
   FolderOpen as LoadIcon
 } from '@mui/icons-material';
 import { v4 as uuidv4 } from 'uuid';
@@ -38,7 +35,6 @@ export function PromptsPanel({ selectedPrompt, onSelectPrompt, onLoadSamplePanel
   const [editingPrompt, setEditingPrompt] = useState<any>(null);
   const [showEditDialog, setShowEditDialog] = useState(false);
   const [showSamplesDialog, setShowSamplesDialog] = useState(false);
-  const [samples, setSamples] = useState<any[]>([]);
   const [formData, setFormData] = useState({ title: '', content: '' });
 
   useEffect(() => {
@@ -80,8 +76,7 @@ export function PromptsPanel({ selectedPrompt, onSelectPrompt, onLoadSamplePanel
               // Load image from samples/images folder
               const imageUrl = `/samples/images/${panel.image}`;
               const imageResponse = await fetch(imageUrl);
-              const imageBlob = await imageResponse.blob();
-              const imageDataUrl = await createImageBitmap(imageBlob);
+              await imageResponse.blob(); // Verify image can be loaded
 
               return {
                 id: panel.id,

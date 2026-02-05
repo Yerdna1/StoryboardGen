@@ -25,7 +25,7 @@ const darkTheme = createTheme({
 
 function App() {
   const [isSetupComplete, setIsSetupComplete] = useState<boolean | null>(null);
-  const [setupInfo, setSetupInfo] = useState<any>(null);
+  const [, setSetupInfo] = useState<any>(null);
 
   useEffect(() => {
     // Check if initial setup is complete

@@ -1,5 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Stage, Layer, Rect, Image as KonvaImage, Text, Group } from 'react-konva';
+import React, { useState, useEffect } from 'react';
 import {
   Box,
   Drawer,
@@ -8,7 +7,6 @@ import {
   Typography,
   IconButton,
   Button,
-  Fab,
   Tooltip,
   CircularProgress,
   LinearProgress,
@@ -24,8 +22,6 @@ import {
   CloudUpload as UploadIcon,
   PlayArrow as GenerateIcon,
   Settings as SettingsIcon,
-  Save as SaveIcon,
-  FolderOpen as LoadIcon,
   Download as DownloadIcon,
   CheckCircle as CompletedIcon,
   Error as ErrorIcon,
@@ -50,9 +46,6 @@ export function MainCanvas({ onOpenSettings }: MainCanvasProps) {
   const [generatedPanels, setGeneratedPanels] = useState<any[]>([]);
   const [showGenerationDialog, setShowGenerationDialog] = useState(false);
   const [downloadingReference, setDownloadingReference] = useState(false);
-
-  const stageRef = useRef<any>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (!window.electronAPI) return;
