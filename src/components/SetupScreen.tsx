@@ -21,7 +21,6 @@ import {
 import {
   VpnKey as KeyIcon,
   CheckCircle as CheckIcon,
-  Warning as WarningIcon,
   Close as CloseIcon,
   FolderOpen as FolderIcon
 } from '@mui/icons-material';
