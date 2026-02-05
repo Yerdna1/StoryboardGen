@@ -1,0 +1,39 @@
+{
+  "name": "Character Journey - Sample Storyboard",
+  "description": "A sample 20-panel storyboard showing a character's emotional journey. Generated with Qwen-Image-Edit for consistent character appearance.",
+  "provider": "modal",
+  "model": "Qwen-Image-Edit-2511",
+  "createdAt": "2025-02-05",
+  "panels": [
+    {"id": "1", "description": "Opening shot - protagonist standing alone at sunset", "aspectRatio": "16:9"},
+    {"id": "2", "description": "Close-up showing determination in their eyes", "aspectRatio": "16:9"},
+    {"id": "3", "description": "Walking through a mysterious forest path", "aspectRatio": "16:9"},
+    {"id": "4", "description": "Discovering an ancient glowing artifact", "aspectRatio": "16:9"},
+    {"id": "5", "description": "The artifact pulses with magical energy", "aspectRatio": "16:9"},
+    {"id": "6", "description": "A shadowy figure watches from the trees", "aspectRatio": "16:9"},
+    {"id": "7", "description": "Protagonist senses they are being followed", "aspectRatio": "16:9"},
+    {"id": "8", "description": "Running through the darkening forest", "aspectRatio": "16:9"},
+    {"id": "9", "description": "Finding shelter in an abandoned cabin", "aspectRatio": "16:9"},
+    {"id": "10", "description": "Examining the artifact by candlelight", "aspectRatio": "16:9"},
+    {"id": "11", "description": "Flashback - childhood memory of family", "aspectRatio": "16:9"},
+    {"id": "12", "description": "Realizing the artifact's true purpose", "aspectRatio": "16:9"},
+    {"id": "13", "description": "Stepping outside at dawn, transformed", "aspectRatio": "16:9"},
+    {"id": "14", "description": "The shadowy figure reveals themselves", "aspectRatio": "16:9"},
+    {"id": "15", "description": "An unexpected alliance is formed", "aspectRatio": "16:9"},
+    {"id": "16", "description": "Training montage - mastering new powers", "aspectRatio": "16:9"},
+    {"id": "17", "description": "Setting out on the ultimate quest", "aspectRatio": "16:9"},
+    {"id": "18", "description": "Facing a terrifying obstacle", "aspectRatio": "16:9"},
+    {"id": "19", "description": "Triumph through courage and determination", "aspectRatio": "16:9"},
+    {"id": "20", "description": "Closing shot - hero's silhouette at sunrise", "aspectRatio": "16:9"}
+  ],
+  "settings": {
+    "provider": "modal",
+    "aspectRatio": "16:9",
+    "numPanels": 20,
+    "num_inference_steps": 40,
+    "guidance_scale": 1.0,
+    "true_cfg_scale": 4.0
+  },
+  "referenceImageRequired": true,
+  "referenceImageNote": "Qwen-Image-Edit requires a reference image to maintain character consistency across all panels."
+}

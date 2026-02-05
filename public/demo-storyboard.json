@@ -1,0 +1,19 @@
+{
+  "name": "Demo Storyboard",
+  "description": "A demo showing Qwen-Image-Edit's character consistency",
+  "note": "This is a text-only demo. To see actual generated images, you need to generate a storyboard with your own reference image.",
+  "panels": [
+    {"id": "1", "title": "Opening Scene", "description": "Character introduction at sunrise"},
+    {"id": "2", "title": "The Call", "description": "Receiving an urgent message"},
+    {"id": "3", "title": "Decision", "description": "Character decides to take action"},
+    {"id": "4", "title": "Journey Begins", "description": "Setting out on the adventure"},
+    {"id": "5", "title": "First Challenge", "description": "Facing an unexpected obstacle"}
+  ],
+  "features": [
+    "✨ Character consistency across all panels",
+    "🎬 Professional cinematic quality",
+    "⚡ Fast generation with Modal H100 GPUs",
+    "🎨 Support for multiple aspect ratios",
+    "🔧 Works with any reference image"
+  ]
+}
